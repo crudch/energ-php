@@ -1,0 +1,9 @@
+/.idea
+/node_modules
+/vendor
+/package-lock.json
+/composer.lock
+*.ai
+*.log
+*.pdf
+*.psd
