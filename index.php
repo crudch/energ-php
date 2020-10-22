@@ -29,7 +29,7 @@ $user_name = 'Valery'; // укажите здесь ваше имя
         <nav class="user-menu">
         <!-- здесь должен быть PHP код для показа меню и данных пользователя -->
             <?php
-            if($is_auth === 1) {
+            if($is_auth === true) {
                 ?>
                 <div class="user-menu__image">
                     <img src="/img/user.jpg" width="40" height="40" alt="Пользователь">
