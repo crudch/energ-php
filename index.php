@@ -35,7 +35,7 @@ $user_name = 'Valery'; // укажите здесь ваше имя
                     <img src="/img/user.jpg" width="40" height="40" alt="Пользователь">
                 </div>
                 <div class="user-menu__logged">
-                    <p></p>
+                    <p><?= $user_name ?></p>
                 </div>
                 <?php
             } else {
