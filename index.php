@@ -1,7 +1,7 @@
 <?php
 $is_auth = rand(0, 1);
 
-$user_name = ''; // укажите здесь ваше имя
+$user_name = 'Valery'; // укажите здесь ваше имя
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -29,7 +29,7 @@ $user_name = ''; // укажите здесь ваше имя
         <nav class="user-menu">
         <!-- здесь должен быть PHP код для показа меню и данных пользователя -->
             <?php
-            if($is_auth === true) {
+            if($is_auth === 1) {
                 ?>
                 <div class="user-menu__image">
                     <img src="" width="40" height="40" alt="Пользователь">
