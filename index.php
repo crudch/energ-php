@@ -32,7 +32,7 @@ $user_name = 'Valery'; // укажите здесь ваше имя
             if($is_auth === 1) {
                 ?>
                 <div class="user-menu__image">
-                    <img src="" width="40" height="40" alt="Пользователь">
+                    <img src="/img/user.jpg" width="40" height="40" alt="Пользователь">
                 </div>
                 <div class="user-menu__logged">
                     <p></p>
