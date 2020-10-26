@@ -9,7 +9,7 @@ $categories = ["Доски и лыжи",
     "Разное"
 ];
 
-$announcements = [
+$products = [
     ["title" => "2014 Rossignol District Snowboard",
         "category" => "Доски и лыжи",
         "price" => "10999",
@@ -112,17 +112,18 @@ $announcements = [
             </div>
             <ul class="lots__list">
                 <!--заполните этот список из массива с товарами-->
+                <?php foreach ($products as $key): ?>
                 <li class="lots__item lot">
                     <div class="lot__image">
                         <img src="" width="350" height="260" alt="">
                     </div>
                     <div class="lot__info">
-                        <span class="lot__category">Название категории</span>
-                        <h3 class="lot__title"><a class="text-link" href="pages/lot.html">Название товара</a></h3>
+                        <span class="lot__category"><?= $key["category"] ?></span>
+                        <h3 class="lot__title"><a class="text-link" href="pages/lot.html"><?= $key["title"] ?></a></h3>
                         <div class="lot__state">
                             <div class="lot__rate">
-                                <span class="lot__amount">Стартовая цена</span>
-                                <span class="lot__cost">цена<b class="rub">р</b></span>
+                                <span class="lot__amount"><?= $key["price"] ?></span><!--ЧТО ТУТ ПИСАТЬ ТО!-->
+                                <span class="lot__cost"><?= $key["price"] ?><b class="rub">р</b></span>
                             </div>
                             <div class="lot__timer timer">
                                 12:23
@@ -130,6 +131,7 @@ $announcements = [
                         </div>
                     </div>
                 </li>
+                <?php endforeach; ?>
             </ul>
         </section>
     </main>
