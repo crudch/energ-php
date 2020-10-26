@@ -3,13 +3,13 @@ $is_auth = (bool)rand(0, 1);
 
 $user_name = 'Valery'; // укажите здесь ваше имя
 
-$category = ["Доски и лыжи",
+$categories = ["Доски и лыжи",
     "Крепления", "Ботинки",
     "Одежда", "Инструменты",
     "Разное"
 ];
 
-$announcement = [
+$announcements = [
     ["title" => "2014 Rossignol District Snowboard",
         "category" => "Доски и лыжи",
         "price" => "10999",
@@ -102,9 +102,7 @@ $announcement = [
             <ul class="promo__list">
                 <!--заполните этот список из массива категорий-->
                 <li class="promo__item promo__item--boards">
-                    <a class="promo__link" href="pages/all-lots.html"><?php foreach ($category as $value) {
-                            echo $value;
-                        } ?></a>
+                    <a class="promo__link" href="pages/all-lots.html"></a>
                 </li>
             </ul>
         </section>
@@ -141,36 +139,11 @@ $announcement = [
     <nav class="nav">
         <ul class="nav__list container">
             <!--заполните этот список из массива категорий-->
+            <?php foreach ($categories as $category): ?>
             <li class="nav__item">
-                <a href="pages/all-lots.html"><?php foreach ($category as $value) {
-                        echo $value;
-                    } ?></a>
+                <a href="pages/all-lots.html"><?= $category ?></a>
             </li>
-            <li class="nav__item">
-                <a href="pages/all-lots.html"><?php foreach ($category as $value) {
-                        echo $value;
-                    } ?></a>
-            </li>
-            <li class="nav__item">
-                <a href="pages/all-lots.html"><?php foreach ($category as $value) {
-                        echo $value;
-                    } ?></a>
-            </li>
-            <li class="nav__item">
-                <a href="pages/all-lots.html"><?php foreach ($category as $value) {
-                        echo $value;
-                    } ?></a>
-            </li>
-            <li class="nav__item">
-                <a href="pages/all-lots.html"><?php foreach ($category as $value) {
-                        echo $value;
-                    } ?></a>
-            </li>
-            <li class="nav__item">
-                <a href="pages/all-lots.html"><?php foreach ($category as $value) {
-                        echo $value;
-                    } ?></a>
-            </li>
+            <?php endforeach; ?>
         </ul>
     </nav>
     <div class="main-footer__bottom container">
