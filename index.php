@@ -12,7 +12,7 @@ $categories = ["Доски и лыжи",
 $products = [
     ["title" => "2014 Rossignol District Snowboard",
         "category" => "Доски и лыжи",
-        "price" => "10999",
+        "price" => "784",
         "img" => "img/lot-1.jpg"
     ],
     ["title" => "DC Ply Mens 2016/2017 Snowboard",
@@ -44,16 +44,16 @@ $products = [
 
 function amount_formatting($amount) {
     if($amount < 1000) {
-        $amount = $amount;
+        $amount .= " Р";
     }
     else {
         $amount = number_format($amount,0,'',' ');
-        $amount .= " &#8399";
+        $amount .= " Р";
     }
    return $amount;
 }
 
-$result = ceil(amount_formatting(1000));
+$result = ceil(amount_formatting($products["price"]));
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -125,18 +125,18 @@ $result = ceil(amount_formatting(1000));
             </div>
             <ul class="lots__list">
                 <!--заполните этот список из массива с товарами-->
-                <?php foreach ($products as $key): ?>
+                <?php foreach ($products as $product): ?>
                 <li class="lots__item lot">
                     <div class="lot__image">
-                        <img src="" width="350" height="260" alt="">
+                        <img src="<?= $product["img"] ?>" width="350" height="260" alt="">
                     </div>
                     <div class="lot__info">
-                        <span class="lot__category"><?= $key["category"] ?></span>
-                        <h3 class="lot__title"><a class="text-link" href="pages/lot.html"><?= $key["title"] ?></a></h3>
+                        <span class="lot__category"><?= $product["category"] ?></span>
+                        <h3 class="lot__title"><a class="text-link" href="pages/lot.html"><?= $product["title"] ?></a></h3>
                         <div class="lot__state">
                             <div class="lot__rate">
                                 <span class="lot__amount">Стартовая цена</span>
-                                <span class="lot__cost"><?= amount_formatting($key["price"]) ?><b class="rub">р</b></span>
+                                <span class="lot__cost"><?= amount_formatting($product["price"]) ?></span>
                             </div>
                             <div class="lot__timer timer">
                                 12:23
