@@ -17,7 +17,7 @@ $products = [
     ],
     ["title" => "DC Ply Mens 2016/2017 Snowboard",
         "category" => "Доски и лыжи",
-        "price" => "159999.22",
+        "price" => "159999",
         "img" => "img/lot-2.jpg"
     ],
     ["title" => "Крепления Union Contact Pro 2015 года размер L/XL",
@@ -27,7 +27,7 @@ $products = [
     ],
     ["title" => "Ботинки для сноуборда DC Mutiny Charocal",
         "category" => "Ботинки",
-        "price" => "5520",
+        "price" => "10999",
         "img" => "img/lot-4.jpg"
     ],
     ["title" => "Куртка для сноуборда DC Mutiny Charocal",
@@ -43,15 +43,9 @@ $products = [
 ];
 
 function amount_formatting($amount) {
-    if($amount < 1000) {
-        $amount .= " Р";
-    }
-    else {
-        $amount = number_format($amount, 0, " ", " ");
-        $amount .= " Р";
-    }
-   return $amount;
+    return number_format($amount,0,'',' ') . ' Р';
 }
+
 
 ?>
 <!DOCTYPE html>
