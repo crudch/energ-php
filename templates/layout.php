@@ -1,6 +1,4 @@
 <?php
-require_once __DIR__.'functions.php';
-
 $is_auth = (bool)rand(0, 1);
 
 $user_name = 'Valery'; // укажите здесь ваше имя
@@ -54,7 +52,7 @@ function amount_formatting($amount) {
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Главная</title>
+    <title><?= $name_page = 'name';?></title>
     <link href="../css/normalize.min.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
 </head>
@@ -102,6 +100,9 @@ function amount_formatting($amount) {
         </div>
     </header>
 
+    <main class="container">
+        <?= $content = 'content'; ?>
+    </main>
 </div>
 
 <footer class="main-footer">
@@ -109,9 +110,9 @@ function amount_formatting($amount) {
         <ul class="nav__list container">
             <!--заполните этот список из массива категорий-->
             <?php foreach ($categories as $category): ?>
-            <li class="nav__item">
-                <a href="pages/all-lots.html"><?= $category ?></a>
-            </li>
+                <li class="nav__item">
+                    <a href="pages/all-lots.html"><?= $category ?></a>
+                </li>
             <?php endforeach; ?>
         </ul>
     </nav>
