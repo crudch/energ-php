@@ -1,60 +1,20 @@
 <?php
-$is_auth = (bool)rand(0, 1);
+/**
+ * @var string $content
+ * @var array $categories
+ */
 
+$is_auth = (bool)random_int(0, 1);
 $user_name = 'Valery'; // укажите здесь ваше имя
-
-$categories = ["Доски и лыжи",
-    "Крепления", "Ботинки",
-    "Одежда", "Инструменты",
-    "Разное"
-];
-
-$products = [
-    ["title" => "2014 Rossignol District Snowboard",
-        "category" => "Доски и лыжи",
-        "price" => "784",
-        "img" => "img/lot-1.jpg"
-    ],
-    ["title" => "DC Ply Mens 2016/2017 Snowboard",
-        "category" => "Доски и лыжи",
-        "price" => "159999",
-        "img" => "img/lot-2.jpg"
-    ],
-    ["title" => "Крепления Union Contact Pro 2015 года размер L/XL",
-        "category" => "Крепления",
-        "price" => "8000",
-        "img" => "img/lot-3.jpg"
-    ],
-    ["title" => "Ботинки для сноуборда DC Mutiny Charocal",
-        "category" => "Ботинки",
-        "price" => "10999",
-        "img" => "img/lot-4.jpg"
-    ],
-    ["title" => "Куртка для сноуборда DC Mutiny Charocal",
-        "category" => "Одежда",
-        "price" => "7500",
-        "img" => "img/lot-5.jpg"
-    ],
-    ["title" => "Маска Oakley Canopy",
-        "category" => "Разное",
-        "price" => "5400",
-        "img" => "img/lot-6.jpg"
-    ]
-];
-
-function amount_formatting($amount) {
-    return number_format($amount,0,'',' ') . ' Р';
-}
-
 
 ?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title><?= $name_page = 'name';?></title>
-    <link href="../css/normalize.min.css" rel="stylesheet">
-    <link href="../css/style.css" rel="stylesheet">
+    <title>Главная</title>
+    <link href="/css/normalize.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
 </head>
 <body>
 <div class="page-wrapper">
@@ -63,13 +23,13 @@ function amount_formatting($amount) {
         <div class="main-header__container container">
             <h1 class="visually-hidden">YetiCave</h1>
             <a class="main-header__logo">
-                <img src="../img/logo.svg" width="160" height="39" alt="Логотип компании YetiCave">
+                <img src="/img/logo.svg" width="160" height="39" alt="Логотип компании YetiCave">
             </a>
             <form class="main-header__search" method="get" action="https://echo.htmlacademy.ru" autocomplete="off">
                 <input type="search" name="search" placeholder="Поиск лота">
                 <input class="main-header__search-btn" type="submit" name="find" value="Найти">
             </form>
-            <a class="main-header__add-lot button" href="pages/add-lot.html">Добавить лот</a>
+            <a class="main-header__add-lot button" href="#">Добавить лот</a>
 
             <nav class="user-menu">
                 <!-- здесь должен быть PHP код для показа меню и данных пользователя -->
@@ -99,10 +59,10 @@ function amount_formatting($amount) {
             </nav>
         </div>
     </header>
-
     <main class="container">
-        <?= $content = 'content'; ?>
+        <?php echo $content; ?>
     </main>
+
 </div>
 
 <footer class="main-footer">
@@ -111,7 +71,7 @@ function amount_formatting($amount) {
             <!--заполните этот список из массива категорий-->
             <?php foreach ($categories as $category): ?>
                 <li class="nav__item">
-                    <a href="pages/all-lots.html"><?= $category ?></a>
+                    <a href="#"><?= $category ?></a>
                 </li>
             <?php endforeach; ?>
         </ul>
@@ -174,8 +134,8 @@ function amount_formatting($amount) {
     </div>
 </footer>
 
-<script src="flatpickr.js"></script>
-<script src="script.js"></script>
+<script src="/flatpickr.js"></script>
+<script src="/script.js"></script>
 </body>
 </html>
 

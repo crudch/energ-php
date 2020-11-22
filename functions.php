@@ -1,17 +1,15 @@
 <?php
-function include_template($name, array $data = []) {
-    $name = 'templates/' . $name;
-    $result = '';
-
-    if (!is_readable($name)) {
-        return $result;
-    }
-
+function amount_formatting($amount) {
+    return number_format($amount,0,'',' ') . ' Р';
+}
+/**
+ * @noinspection PhpIncludeInspection
+ */
+function include_template(string $template, array  $data = [])
+{
     ob_start();
-    extract($data);
-    require $name;
+    extract($data, EXTR_OVERWRITE);
+    require __DIR__."/templates/{$template}.php";
 
-    $result = ob_get_clean();
-
-    return $result;
+    return ob_get_clean();
 }
