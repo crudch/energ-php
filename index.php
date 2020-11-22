@@ -43,7 +43,7 @@ $products = [
     ]
 ];
 
-$content = include_template('index', compact('products', 'categories'));
+$content = include_template('main', compact('products', 'categories'));
 
 echo include_template('layout', [
     'content' => $content,
