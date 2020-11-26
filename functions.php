@@ -1,15 +1,39 @@
 <?php
-function amount_formatting($amount) {
-    return number_format($amount,0,'',' ') . ' Р';
+function amount_formatting($amount)
+{
+    return number_format($amount, 0, '', ' ') . ' Р';
 }
+
 /**
  * @noinspection PhpIncludeInspection
  */
-function include_template(string $template, array  $data = [])
+function include_template(string $template, array $data = [])
 {
     ob_start();
     extract($data, EXTR_OVERWRITE);
-    require __DIR__."/templates/{$template}.php";
+    require __DIR__ . "/templates/{$template}.php";
 
     return ob_get_clean();
+}
+
+/*
+ * @param $date
+ *
+ * $throws Exception
+ */
+
+function dateEnd($date)
+{
+    $diff = strtotime($date) - $_SERVER['REQUEST_TIME'];
+
+    if ($diff < 0) {
+        return false;
+    }
+
+    $days = floor($diff / 86400) ?: ' ';
+    $hours = sprintf('%02d', floor(($diff % 86400) / 3600));
+    $minutes = sprintf('%02d', floor(($diff % 3600) / 60));
+
+    return "{$days} {$hours} : {$minutes}";
+
 }
