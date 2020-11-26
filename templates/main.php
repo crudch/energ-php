@@ -38,17 +38,7 @@
                             <span class="lot__cost"><?= amount_formatting($product["price"]) ?></span>
                         </div>
                         <div class="lot__timer timer">
-                            <?php date_default_timezone_set('Europe/Moscow'); ?>
-                            <?php
-                            $data_1 = "23.11.2020";
-                            $data_2 = "24.11.2020";
-                            $data_sec_1 = strtotime("23.11.2020");
-                            $data_sec_2= strtotime("24.11.2020");
-                            $data_hour = ($data_sec_2 -  $data_sec_1) / 3600;
-                            $data_minute = ($data_sec_2 -  $data_sec_1) / 360;
-                            echo $data_hour .':' . $data_minute;
-                            ?>
-
+                            <?php echo dateEnd($product['end_date']) ?: 'КОНЕЦ'; ?>
                         </div>
                     </div>
                 </div>
