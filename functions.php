@@ -31,7 +31,7 @@ function dateEnd($date)
     }
 
     $days = floor($diff / 86400) ?: ' ';
-    $hours = sprintf('%02d', floor($diff % 86400) / 3600);
+    $hours = sprintf('%02d', floor(($diff % 86400) / 3600));
     $minutes = sprintf('%02d', floor(($diff % 3600) / 60));
 
     return "{$days} {$hours} : {$minutes}";
