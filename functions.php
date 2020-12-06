@@ -37,3 +37,16 @@ function dateEnd($date)
     return "{$days} {$hours} : {$minutes}";
 
 }
+
+
+function findProductByid(int $id): ?array
+{
+    foreach (require __DIR__ . '/data/products.php' as $product) {
+        if ($product['id'] === $id) {
+            return $product;
+        }
+    }
+
+
+    return null;
+}
